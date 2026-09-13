@@ -3,7 +3,7 @@ body {
   font-family: -apple-system, "Microsoft YaHei", sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #ffffff;
   background-attachment: fixed;
   color: #333;
   min-height: 100vh;
@@ -46,11 +46,11 @@ header a:hover {
   margin-bottom: 20px;
 }
 .post-item h3 a {
-  color: #e74c3c;
+  color: #000000;
   text-decoration: none;
 }
 .post-item h3 a:hover {
-  color: #e74c3c;
+  color: #000000;
 }
 
 /* 页脚 */
