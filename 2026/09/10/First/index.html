@@ -21,33 +21,55 @@
   <!-- 🌟 这里就是魔术发生的地方，其他页面的内容会被塞进这里 -->
   <main class="container">
     <h1>🎉 零基础小白从零搭建 Hexo 博客踩坑全记录（附常用指令小抄）</h1>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <h4 id="作为一个完全零基础的小白，从最初不知道命令行是什么，到最后成功把博客上线、换上漂亮的Reimu主题、改好头像，一路踩坑一路填，终于拥有了自己的网站：https-moanjinhuan-github-io。"><a href="#作为一个完全零基础的小白，从最初不知道命令行是什么，到最后成功把博客上线、换上漂亮的Reimu主题、改好头像，一路踩坑一路填，终于拥有了自己的网站：https-moanjinhuan-github-io。" class="headerlink" title="作为一个完全零基础的小白，从最初不知道命令行是什么，到最后成功把博客上线、换上漂亮的Reimu主题、改好头像，一路踩坑一路填，终于拥有了自己的网站：https://moanjinhuan.github.io。"></a>作为一个完全零基础的小白，从最初不知道命令行是什么，到最后成功把博客上线、换上漂亮的Reimu主题、改好头像，一路踩坑一路填，终于拥有了自己的网站：<a target="_blank" rel="noopener" href="https://moanjinhuan.github.io./">https://moanjinhuan.github.io。</a></h4><h4 id="这篇文章记录了我整个搭建过程、遇到的报错以及解决办法，希望帮到同样零基础的你！"><a href="#这篇文章记录了我整个搭建过程、遇到的报错以及解决办法，希望帮到同样零基础的你！" class="headerlink" title="这篇文章记录了我整个搭建过程、遇到的报错以及解决办法，希望帮到同样零基础的你！"></a>这篇文章记录了我整个搭建过程、遇到的报错以及解决办法，希望帮到同样零基础的你！</h4></blockquote>
-</blockquote>
-<blockquote>
-<h2 id="1-注册-GitHub-账号"><a href="#1-注册-GitHub-账号" class="headerlink" title="1. 注册 GitHub 账号"></a>1. 注册 GitHub 账号</h2></blockquote>
-<blockquote>
-<blockquote>
+<hr>
+<p>🛠️ 第一阶段：环境准备</p>
+<h2 id="1-注册-GitHub-账号"><a href="#1-注册-GitHub-账号" class="headerlink" title="1. 注册 GitHub 账号"></a>1. 注册 GitHub 账号</h2><blockquote>
 <h4 id="访问-https-github-com-，点击-Sign-up-注册。记住你的用户名，这是你博客网址的一部分。"><a href="#访问-https-github-com-，点击-Sign-up-注册。记住你的用户名，这是你博客网址的一部分。" class="headerlink" title="访问 https://github.com/，点击 Sign up 注册。记住你的用户名，这是你博客网址的一部分。"></a>访问 <a target="_blank" rel="noopener" href="https://github.com/%EF%BC%8C%E7%82%B9%E5%87%BB">https://github.com/，点击</a> Sign up 注册。记住你的用户名，这是你博客网址的一部分。</h4></blockquote>
-</blockquote>
-<blockquote>
-<h2 id="2-安装-Git-和-Node-js"><a href="#2-安装-Git-和-Node-js" class="headerlink" title="2. 安装 Git 和 Node.js"></a>2. 安装 Git 和 Node.js</h2></blockquote>
-<blockquote>
-<blockquote>
-<h4 id="下载安装-Git-时，一定要注意这三个选项："><a href="#下载安装-Git-时，一定要注意这三个选项：" class="headerlink" title="下载安装 Git 时，一定要注意这三个选项："></a>下载安装 Git 时，一定要注意这三个选项：</h4><ul>
+<h2 id="2-安装-Git-和-Node-js"><a href="#2-安装-Git-和-Node-js" class="headerlink" title="2. 安装 Git 和 Node.js"></a>2. 安装 Git 和 Node.js</h2><blockquote>
+<h4 id="下载安装-Git-时，一定要注意这三个选项："><a href="#下载安装-Git-时，一定要注意这三个选项：" class="headerlink" title="下载安装 Git 时，一定要注意这三个选项："></a>下载安装 Git 时，一定要注意这三个选项：</h4><blockquote>
+<ul>
 <li>默认编辑器：选 VS Code 或 Notepad。</li>
 <li>PATH 环境变量：选 Git from the command line and also from 3rd-party software（第二项）。</li>
 <li>换行符转换：保持默认第一项即可。</li>
 </ul>
 </blockquote>
 </blockquote>
-<blockquote>
 <h2 id="3-安装-Hexo"><a href="#3-安装-Hexo" class="headerlink" title="3. 安装 Hexo"></a>3. 安装 Hexo</h2><blockquote>
-<p>❌ 遇到的坑： 错误地打开了 Node.js 的快捷方式，在里面输入 npm i -g hexo-cli，结果报错 npm should be run outside of the Node.js REPL…。<br>✅ 解决办法： 退出 Node.js 环境（按 Ctrl + C 或 Ctrl + D），打开 Git Bash（在桌面右键选择 Git Bash Here）。在 Git Bash 中输入：npm i -g hexo-cli</p>
+<p>❌ 遇到的坑： 错误地打开了 Node.js 的快捷方式，在里面输入 npm i -g hexo-cli，结果报错 npm should be run outside of the Node.js REPL…。</p>
+<p>✅ 解决办法： 退出 Node.js 环境（按 Ctrl + C 或 Ctrl + D），打开 Git Bash（在桌面右键选择 Git Bash Here）。在 Git Bash 中输入：</p>
 </blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">npm i -g hexo-cli</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>🏗️ 第二阶段：初始化博客和部署到 GitHub</p>
+<h2 id="1-初始化博客"><a href="#1-初始化博客" class="headerlink" title="1. 初始化博客"></a>1. 初始化博客</h2><h2 id="我在-Moanjinhuan-目录下直接执行了："><a href="#我在-Moanjinhuan-目录下直接执行了：" class="headerlink" title="我在 ~&#x2F;Moanjinhuan 目录下直接执行了："></a>我在 ~&#x2F;Moanjinhuan 目录下直接执行了：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：并没有单独建 blog 文件夹，直接在 Moanjinhuan 文件夹里初始化了。</p>
+<h2 id="2-创建-GitHub-Pages-仓库"><a href="#2-创建-GitHub-Pages-仓库" class="headerlink" title="2. 创建 GitHub Pages 仓库"></a>2. 创建 GitHub Pages 仓库</h2><blockquote>
+<h4 id="在-GitHub-新建仓库，名字必须是-你的用户名-github-io（例如-Moanjinhuan-github-io），设为-Public。"><a href="#在-GitHub-新建仓库，名字必须是-你的用户名-github-io（例如-Moanjinhuan-github-io），设为-Public。" class="headerlink" title="在 GitHub 新建仓库，名字必须是 你的用户名.github.io（例如 Moanjinhuan.github.io），设为 Public。"></a>在 GitHub 新建仓库，名字必须是 你的用户名.github.io（例如 Moanjinhuan.github.io），设为 Public。</h4></blockquote>
+<h2 id="3-连接本地与远程（九九八十一难开始）"><a href="#3-连接本地与远程（九九八十一难开始）" class="headerlink" title="3. 连接本地与远程（九九八十一难开始）"></a>3. 连接本地与远程（九九八十一难开始）</h2><blockquote>
+<h4 id="❌-遇到的坑一（SSH-连接被拒）："><a href="#❌-遇到的坑一（SSH-连接被拒）：" class="headerlink" title="❌ 遇到的坑一（SSH 连接被拒）："></a>❌ 遇到的坑一（SSH 连接被拒）：</h4><p>使用 git clone <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;">git@github.com</a>:… 报错 Connection refused。<br>✅ 解决办法： 改用 HTTPS 协议。</p>
 </blockquote>
-<p>编写ing</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">git clone https://github.com/Moanjinhuan/Moanjinhuan.github.io.git</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="❌-遇到的坑二（Git-身份未知）："><a href="#❌-遇到的坑二（Git-身份未知）：" class="headerlink" title="❌ 遇到的坑二（Git 身份未知）："></a>❌ 遇到的坑二（Git 身份未知）：</h4><p>执行 hexo deploy 报错 Author identity unknown。<br>✅ 解决办法： 在 Git Bash 中告诉 Git 我是谁：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">git config --global user.name &quot;Moanjinhuan&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub邮箱&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="❌-遇到的坑三（授权卡住）："><a href="#❌-遇到的坑三（授权卡住）：" class="headerlink" title="❌ 遇到的坑三（授权卡住）："></a>❌ 遇到的坑三（授权卡住）：</h4><p>弹窗要求登录，浏览器授权卡死。<br>✅ 解决办法： 选择浏览器授权（Sign in with your browser）或直接使用 GitHub Token。去 GitHub 的 Settings -&gt; Developer settings -&gt; Personal access tokens 生成一个 Token（勾选 repo 权限），粘贴到密码框即可。</p>
+</blockquote>
+<blockquote>
+<h4 id="❌-遇到的坑四（Pages-设置无法保存）："><a href="#❌-遇到的坑四（Pages-设置无法保存）：" class="headerlink" title="❌ 遇到的坑四（Pages 设置无法保存）："></a>❌ 遇到的坑四（Pages 设置无法保存）：</h4><p>在 GitHub 仓库 Settings -&gt; Pages 里，选 main 分支后 Save 按钮点不了。<br>✅ 解决办法： 因为页面顶部提示“已从 main 分支构建”，说明已经配置好了，无需重复保存。</p>
+</blockquote>
+<h2 id="4-配置-Hexo-部署文件"><a href="#4-配置-Hexo-部署文件" class="headerlink" title="4. 配置 Hexo 部署文件"></a>4. 配置 Hexo 部署文件</h2><p>在根目录 _config.yml 底部修改：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/Moanjinhuan/Moanjinhuan.github.io.git</span><br><span class="line">  branch: main</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>编辑中，<strong>更新时间：2026年9月15日</strong></p>
  
   </main>
   
