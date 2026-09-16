@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <title>墨安槿幻的幻想之境</title>
   <link rel="stylesheet" href="/css/style.css">
-  <!-- 引入 FontAwesome 图标库，用来显示下箭头 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <meta name="generator" content="Hexo 8.1.2"></head>
 <body>
+  <!-- 全局背景压暗遮罩 -->
+  <div class="bg-overlay"></div>
+
   <!-- 加载动画 -->
   <div id="loader">
     <div class="spinner"></div>
@@ -26,9 +28,10 @@
     </nav>
   </header>
 
-  <!-- 主体内容 -->
+  <!-- 主体内容判断：首页全屏，其他页面套卡片 -->
   <main>
-    <!-- 全屏首屏区域 -->
+    
+      <!-- 全屏首屏区域 -->
 <div class="hero-section">
   <h1 class="hero-title">墨安槿幻的幻想之境</h1>
   <p class="hero-subtitle">欢迎光临我的幻想窝 ╰(*°▽°*)╯</p>
@@ -40,8 +43,8 @@
   </div>
 </div>
 
-<!-- 向下滑动的文章列表区 -->
-<div class="container" id="recent-posts">
+<!-- 向下滑动到文章列表区（这个区域在 layout.ejs 里已经被包进白底卡片了） -->
+<div id="recent-posts" style="padding: 30px;">
   <h2>最新文章</h2>
   
     <div class="post-item">
@@ -50,6 +53,7 @@
     </div>
   
 </div>
+    
   </main>
 
   <script>
@@ -59,7 +63,7 @@
       loader.style.opacity = '0';
       setTimeout(() => {
         loader.style.display = 'none';
-      }, 500); // 500毫秒后彻底隐藏
+      }, 600); // 稍微延长一点时间看动画
     });
   </script>
 </body>

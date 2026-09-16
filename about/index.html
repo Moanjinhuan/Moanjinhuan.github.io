@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <title>墨安槿幻的幻想之境</title>
   <link rel="stylesheet" href="/css/style.css">
-  <!-- 引入 FontAwesome 图标库，用来显示下箭头 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <meta name="generator" content="Hexo 8.1.2"></head>
 <body>
+  <!-- 全局背景压暗遮罩 -->
+  <div class="bg-overlay"></div>
+
   <!-- 加载动画 -->
   <div id="loader">
     <div class="spinner"></div>
@@ -26,9 +28,11 @@
     </nav>
   </header>
 
-  <!-- 主体内容 -->
+  <!-- 主体内容判断：首页全屏，其他页面套卡片 -->
   <main>
-    <h1>关于我 🧑‍💻</h1>
+    
+      <div class="container">
+        <h1>关于我 🧑‍💻</h1>
 <h2 id="你好，欢迎来到我的幻想之境。"><a href="#你好，欢迎来到我的幻想之境。" class="headerlink" title="你好，欢迎来到我的幻想之境。"></a>你好，欢迎来到我的幻想之境。</h2><blockquote>
 <h4 id="我是一个平凡的人。搭建这个博客，是想在繁杂的网络世界及其现实世界里，拥有一方属于自己的，有烟火气的地方，用来记录日常，并把我凝结的心血融入这个空间。"><a href="#我是一个平凡的人。搭建这个博客，是想在繁杂的网络世界及其现实世界里，拥有一方属于自己的，有烟火气的地方，用来记录日常，并把我凝结的心血融入这个空间。" class="headerlink" title="我是一个平凡的人。搭建这个博客，是想在繁杂的网络世界及其现实世界里，拥有一方属于自己的，有烟火气的地方，用来记录日常，并把我凝结的心血融入这个空间。"></a>我是一个平凡的人。搭建这个博客，是想在繁杂的网络世界及其现实世界里，拥有一方属于自己的，有烟火气的地方，用来记录日常，并把我凝结的心血融入这个空间。</h4></blockquote>
 <h2 id="一、自我简介-👤"><a href="#一、自我简介-👤" class="headerlink" title="一、自我简介 👤"></a>一、自我简介 👤</h2><blockquote>
@@ -52,6 +56,8 @@
 <hr>
 <p><strong>更新时间：2026年09月13日</strong></p>
 
+      </div>
+    
   </main>
 
   <script>
@@ -61,7 +67,7 @@
       loader.style.opacity = '0';
       setTimeout(() => {
         loader.style.display = 'none';
-      }, 500); // 500毫秒后彻底隐藏
+      }, 600); // 稍微延长一点时间看动画
     });
   </script>
 </body>
