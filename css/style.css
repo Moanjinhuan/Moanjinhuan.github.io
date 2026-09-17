@@ -315,3 +315,36 @@ body {
 body.light-mode .theme-ripple {
   background: rgba(0, 0, 0, 0.8);
 }
+
+/* ================= 文字颜色自适应 ================= */
+
+/* 1. 白色卡片区域：强制黑字（解决白底白字问题） */
+.container, 
+.container p, 
+.container h1, .container h2, .container h3, .container h4,
+.container a, .container span, .container div,
+.card-item, .card-item p, .card-item h3,
+.guestbook-form, .guestbook-form h3 {
+  color: #333333 !important; /* 深灰色，接近黑色 */
+}
+
+/* 针对留言板输入框特殊处理，确保输入时能看到字 */
+.guestbook-form input, .guestbook-form textarea {
+  color: #333333 !important;
+  background: #ffffff !important;
+}
+
+/* 2. 深色背景区域：强制白字（解决黑底黑字问题） */
+.hero-section, 
+.hero-section h1, .hero-section p,
+.character-panel, 
+.character-panel h2, .character-panel p,
+.timeline-wrapper, .timeline-item, .timeline-date,
+#navbar nav a, #navbar .logo {
+  color: #ffffff !important; /* 纯白色 */
+}
+
+/* 3. 关于页面左侧的圆圈数字 */
+.character-circle {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
