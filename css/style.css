@@ -1,3 +1,19 @@
+:root {
+  --bg-color: #1a1a2e;
+  --text-color: #ffffff;
+  --card-bg: rgba(255,255,255,0.9);
+  --card-text: #333333;
+  --nav-bg: rgba(0,0,0,0.4);
+}
+/* 明模式下的颜色 */
+body.light-mode {
+  --bg-color: #f5f7fa;
+  --text-color: #333333;
+  --card-bg: rgba(255,255,255,0.8);
+  --card-text: #333333;
+  --nav-bg: rgba(255,255,255,0.6);
+}
+
 /* ================= 自定义字体（汇文明朝体 otf 版） ================= */
 @font-face {
   font-family: 'HuiwenMincho';
@@ -28,12 +44,11 @@ body {
 
 /* ================= 全局压暗遮罩 ================= */
 .bg-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(0, 0, 0, 0.65); /* 0.65是暗度，想更暗改成0.8，想亮一点改成0.4 */
-  z-index: -1; 
-  pointer-events: none;
+  background: rgba(0, 0, 0, 0.65);
+  transition: background 0.8s ease;
+}
+body.light-mode .bg-overlay {
+  background: rgba(255, 255, 255, 0.4); /* 亮色模式下背景蒙版变白 */
 }
 
 /* ================= 🌟 加载动画 (八卦阵) ================= */
@@ -264,4 +279,39 @@ body {
 }
 .character-panel {
   scroll-snap-align: start;
+}
+
+/* ================= 新的通用网格布局 ================= */
+.grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.card-item { background: rgba(255, 255, 255, 0.9); color: #333; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+.card-item h3 { margin-top: 0; }
+.kid-avatar { width: 100px; height: 100px; background: #ccc; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+.media-box { background: #eee; height: 150px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: #999; }
+.link-btn { display: inline-block; margin-top: 10px; padding: 5px 15px; background: #667eea; color: white; text-decoration: none; border-radius: 20px; }
+
+/* ================= 留言板 ================= */
+.guestbook-wrapper { max-width: 600px; margin: 0 auto; color: white; }
+.guestbook-form { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 12px; display: flex; flex-direction: column; gap: 15px; }
+.guestbook-form input, .guestbook-form textarea { padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.3); background: rgba(0,0,0,0.3); color: white; font-family: inherit; }
+.guestbook-form button { padding: 12px; border: none; background: #667eea; color: white; border-radius: 8px; cursor: not-allowed; opacity: 0.6; }
+
+/* ================= 时间线 ================= */
+.timeline-wrapper { position: relative; max-width: 800px; margin: 0 auto; color: white; padding-left: 20px; border-left: 2px solid rgba(255,255,255,0.3); }
+.timeline-item { position: relative; margin-bottom: 40px; padding-left: 30px; }
+.timeline-item::before { content: ''; position: absolute; left: -31px; top: 0; width: 20px; height: 20px; background: #667eea; border-radius: 50%; border: 4px solid #1a1a2e; }
+.timeline-date { font-size: 0.9rem; color: #a1c4fd; margin-bottom: 5px; }
+
+/* 水波荡漾动画 */
+.theme-ripple {
+  position: fixed;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  z-index: 9998; /* 在导航栏之上，加载动画之下 */
+  transition: transform 0.8s ease-out;
+  mix-blend-mode: difference; /* 让水波和背景混合，产生奇妙的视觉效果 */
+}
+body.light-mode .theme-ripple {
+  background: rgba(0, 0, 0, 0.8);
 }

@@ -53,28 +53,18 @@
       <main>
     <!-- 首页 和 关于页 全屏展示，其他页面（归档、文章）才套白底卡片 -->
     
-      <!-- 全屏首屏区域 -->
-<div class="hero-section">
-  <h1 class="hero-title">墨安槿幻的幻想之境</h1>
-  <p class="hero-subtitle">欢迎光临我的幻想窝 ╰(*°▽°*)╯</p>
-  
-  <div class="scroll-down">
-    <a href="#recent-posts">
-      <i class="fa-solid fa-chevron-down"></i>
-    </a>
+      <div class="container">
+        <h1>guestbook</h1>
+<div class="guestbook-wrapper">
+  <div class="guestbook-form">
+    <h3>给我留言</h3>
+    <input type="text" placeholder="你的名字" disabled>
+    <input type="email" placeholder="你的邮箱" disabled>
+    <textarea placeholder="想说的话..." rows="5" disabled></textarea>
+    <button disabled>留言板正在建设中...</button>
   </div>
 </div>
-
-<!-- 向下滑动到文章列表区（这个区域在 layout.ejs 里已经被包进白底卡片了） -->
-<div id="recent-posts" style="padding: 30px;">
-  <h2>最新文章</h2>
-  
-    <div class="post-item">
-      <h3><a href="/2026/09/10/First/">🎉 零基础小白从零搭建 Hexo 博客踩坑全记录（附常用指令小抄）</a></h3>
-      <p>暂无摘要</p>
-    </div>
-  
-</div>
+      </div>
     
   </main>
 
