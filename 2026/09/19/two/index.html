@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>墨安槿幻的幻想之境</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta name="generator" content="Hexo 8.1.2"></head>
+<body>
+  <!-- 全局背景压暗遮罩 -->
+  <div class="bg-overlay"></div>
+
+    <!-- 加载动画 (八卦阵) -->
+  <div id="loader">
+    <div class="bagua-wrap">
+      <!-- 中心太极（现在用CSS画，以后你可以换成图片） -->
+      <div class="taiji"></div>
+      <!-- 八个方位的发光点 -->
+      <div class="bagua-dots">
+        <div class="dot" style="--color: #ffffff;"></div>
+        <div class="dot" style="--color: #ff4d4d;"></div>
+        <div class="dot" style="--color: #ffa500;"></div>
+        <div class="dot" style="--color: #ffff00;"></div>
+        <div class="dot" style="--color: #00ff00;"></div>
+        <div class="dot" style="--color: #00ffff;"></div>
+        <div class="dot" style="--color: #0000ff;"></div>
+        <div class="dot" style="--color: #800080;"></div>
+      </div>
+    </div>
+    <p>正在进入墨安槿幻的幻想窝...</p>
+  </div>
+
+  <!-- 顶部半透明导航栏 -->
+  <header id="navbar">
+    <div class="logo1">
+      <img src="/images/logo1.jpg" alt="logo1">
+    </div>
+    <nav>
+      <a href="/">首页</a>
+      <a href="/archives">归档</a>
+      <a href="/works/">我的作品展示</a>
+      <a href="/kids/">孩子们的窝</a>
+      <a href="/links/">咱们友情的链接</a>
+      <a href="/guestbook/">留言板</a>
+      <a href="/timeline/">异世界时间线</a>
+      <a href="/about/">关于</a>
+      <!-- 明暗切换按钮 -->
+      <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </nav>
+  </header>
+
+  <!-- 主体内容判断：首页全屏，其他页面套卡片 -->
+      <main>
+    <!-- 首页 和 关于页 全屏展示，其他页面（归档、文章）才套白底卡片 -->
+    
+      <div class="container">
+        <h1>删除或换掉reimu主题</h1>
+<h2 id="🗑️第一步：如何卸载或换掉现在的-Reimu-主题？"><a href="#🗑️第一步：如何卸载或换掉现在的-Reimu-主题？" class="headerlink" title="🗑️第一步：如何卸载或换掉现在的 Reimu 主题？"></a>🗑️第一步：如何卸载或换掉现在的 Reimu 主题？</h2><p>千万不要直接去 themes 文件夹里把 reimu 文件夹删掉，如果 _config.yml 里还写着 theme: reimu，Hexo 启动会直接报错。</p>
+<p>安全做法如下：</p>
+<h3 id="1-先切换回默认主题："><a href="#1-先切换回默认主题：" class="headerlink" title="1. 先切换回默认主题："></a>1. 先切换回默认主题：</h3><p>打开根目录 _config.yml，把 theme: reimu 改成：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span></span><br></pre></td></tr></table></figure>
+
+<p>landscape 是 Hexo 自带的默认主题，一直都在你的 themes 文件夹里）。</p>
+<h3 id="2-清理缓存："><a href="#2-清理缓存：" class="headerlink" title="2. 清理缓存："></a>2. 清理缓存：</h3><p>在 Git Bash 里运行 hexo clean。</p>
+<h3 id="3-测试是否成功："><a href="#3-测试是否成功：" class="headerlink" title="3. 测试是否成功："></a>3. 测试是否成功：</h3><p>运行 hexo s，打开 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> ， 如果看到默认的蓝白主题，说明切换成功了。</p>
+<h3 id="4-删除-Reimu（可选）："><a href="#4-删除-Reimu（可选）：" class="headerlink" title="4. 删除 Reimu（可选）："></a>4. 删除 Reimu（可选）：</h3><p>确认成功切换后，你可以去 themes 文件夹里，把 reimu 文件夹整个删掉。<br>（另外，你之前建在根目录的 _config.reimu.yml 也可以一并删掉）。</p>
+<h2 id="🎨-第二步：如何从零开始做一个自己的主题？"><a href="#🎨-第二步：如何从零开始做一个自己的主题？" class="headerlink" title="🎨 第二步：如何从零开始做一个自己的主题？"></a>🎨 第二步：如何从零开始做一个自己的主题？</h2><p>做主题，其实就是把你设计的静态 HTML 网页，变成 Hexo 能读懂的“模板”。跟着我按以下步骤做：</p>
+<h3 id="1-创建主题的“空壳”"><a href="#1-创建主题的“空壳”" class="headerlink" title="1. 创建主题的“空壳”"></a>1. 创建主题的“空壳”</h3><p>✅ 正确的“从零开始做主题”方法<br>第一步：手动创建主题文件夹<br>不需要敲任何命令，直接去你的电脑文件夹里，找到博客根目录下的 themes 文件夹。在里面，新建一个文件夹，名字就是你想要的主题名字，比如 my-theme。</p>
+<p>第二步：让 Hexo 认识你的新主题<br>打开博客根目录的 _config.yml 文件，把 theme: 后面的名字，改成你刚创建的文件夹名字：theme: my-theme。</p>
+<p>第三步：创建主题必备的“骨架”文件<br>进入 themes&#x2F;my-theme&#x2F; 文件夹，在里面新建以下内容：</p>
+<ul>
+<li><p>新建一个文件夹 layout</p>
+</li>
+<li><p>新建一个文件夹 source</p>
+</li>
+<li><p>新建一个文件 _config.yml（这个文件可以先空着）</p>
+</li>
+</ul>
+<h3 id="2-认识三个核心文件"><a href="#2-认识三个核心文件" class="headerlink" title="2. 认识三个核心文件"></a>2. 认识三个核心文件</h3><p>去 themes&#x2F;my-theme 文件夹里，你会看到这些核心目录：</p>
+<ul>
+<li><p>_config.yml：你的主题的配置项（比如是否开启某功能）。</p>
+</li>
+<li><p>layout&#x2F;：这里放的是模板文件（.ejs 后缀）。</p>
+</li>
+<li><p>source&#x2F;：这里放你的 CSS、JS、图片。</p>
+</li>
+</ul>
+<h3 id="3-🎨-下一步：怎么开始写你的第一个页面？"><a href="#3-🎨-下一步：怎么开始写你的第一个页面？" class="headerlink" title="3. 🎨 下一步：怎么开始写你的第一个页面？"></a>3. 🎨 下一步：怎么开始写你的第一个页面？</h3><p>刚才创建的 layout 文件夹就是用来放模板文件的地方。你需要用记事本或 VS Code 在里面新建一个文件，命名为 index.ejs，然后把下面这段代码复制进去：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>&lt;%= config.title %&gt;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是我亲手做的主题！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>网站标题是：&lt;%= config.title %&gt;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  &lt;% page.posts.each(function(post)&#123; %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h2</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&lt;%- url_for(post.path) %&gt;&quot;</span>&gt;</span>&lt;%= post.title %&gt;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  &lt;% &#125;); %&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-开启你的主题"><a href="#4-开启你的主题" class="headerlink" title="4. 开启你的主题"></a>4. 开启你的主题</h3><p>去根目录 _config.yml，把 theme: landscape 改成 theme: my-theme。<br>在 Git Bash 里执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>打开 localhost:4000，你就能看到你刚亲手搭出来的主题（虽然可能非常简陋，但那是你写的！）。</p>
+<hr>
+<h3 id="更新时间：2026年9月19日"><a href="#更新时间：2026年9月19日" class="headerlink" title="更新时间：2026年9月19日"></a><em>更新时间：2026年9月19日</em></h3>
+      </div>
+    
+  </main>
+
+   <script>
+    // 隐藏加载动画
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 800); // 等淡出动画结束
+      }, 2000); // 强制显示2秒
+    });
+  </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // ========== 1. 加载动画（2秒后消失） ==========
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 800); // 等淡出动画结束
+      }, 2000); // 强制显示2秒
+
+      // ========== 2. 明暗模式切换（水波荡漾） ==========
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function(e) {
+          const x = e.clientX;
+          const y = e.clientY;
+          const ripple = document.createElement('div');
+          ripple.className = 'theme-ripple';
+          ripple.style.left = x + 'px';
+          ripple.style.top = y + 'px';
+          
+          const maxRadius = Math.hypot(window.innerWidth, window.innerHeight);
+          ripple.style.width = ripple.style.height = maxRadius * 2 + 'px';
+          
+          document.body.appendChild(ripple);
+
+          requestAnimationFrame(() => {
+            ripple.style.transform = 'translate(-50%, -50%) scale(1)';
+          });
+
+          setTimeout(() => {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            themeToggle.textContent = isLight ? '☀️' : '🌙';
+            ripple.remove();
+          }, 800);
+        });
+      }
+
+      // ========== 3. 关于页面：滚动切换九宫格角色 ==========
+      const panels = document.querySelectorAll('.character-panel');
+      if (panels.length > 0) {
+        const circle = document.getElementById('character-visual');
+        const numberEl = document.getElementById('character-number');
+        
+        // ⚠️ 你以后画好角色图，就把这里的渐变替换成图片路径，比如 ['/images/char1.png', ...]
+        const styles = [
+          'linear-gradient(135deg, #667eea, #764ba2)',
+          'linear-gradient(135deg, #f093fb, #f5576c)',
+          'linear-gradient(135deg, #4facfe, #00f2fe)',
+          'linear-gradient(135deg, #43e97b, #38f9d7)',
+          'linear-gradient(135deg, #fa709a, #fee140)',
+          'linear-gradient(135deg, #a18cd1, #fbc2eb)',
+          'linear-gradient(135deg, #ffecd2, #fcb69f)',
+          'linear-gradient(135deg, #ff9a9e, #fecfef)',
+          'linear-gradient(135deg, #a1c4fd, #c2e9fb)'
+        ];
+
+        let currentIndex = 0;
+
+        function switchCharacter(index) {
+          if (index === currentIndex) return;
+          
+          circle.style.transform = 'scale(0.8)';
+          circle.style.opacity = '0.3';
+
+          setTimeout(() => {
+            circle.style.background = styles[index % styles.length];
+            if (numberEl) numberEl.textContent = String(index + 1).padStart(2, '0');
+            circle.style.transform = 'scale(1)';
+            circle.style.opacity = '1';
+            currentIndex = index;
+          }, 300);
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const index = parseInt(entry.target.getAttribute('data-index')) - 1;
+              panels.forEach(p => p.classList.remove('active'));
+              entry.target.classList.add('active');
+              switchCharacter(index);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        panels.forEach(panel => observer.observe(panel));
+      }
+      
+    });
+  </script>
+</body>
+</html>
