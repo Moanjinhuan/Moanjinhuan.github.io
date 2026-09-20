@@ -54,38 +54,22 @@
     <!-- 首页 和 关于页 全屏展示，其他页面（归档、文章）才套白底卡片 -->
     
       <div class="container">
-        <!-- 全屏首屏区域 -->
-<div class="hero-section">
-  <h1 class="hero-title">墨安槿幻的幻想之境</h1>
-  <p class="hero-subtitle">欢迎光临我的幻想窝 ╰(*°▽°*)╯</p>
-  
-  <div class="scroll-down">
-    <a href="#recent-posts">
-      <i class="fa-solid fa-chevron-down"></i>
-    </a>
-  </div>
-</div>
-
-<!-- 向下滑动到文章列表区（这个区域在 layout.ejs 里已经被包进白底卡片了） -->
-<div id="recent-posts" style="padding: 30px;">
-  <h2>最新文章</h2>
-  
-    <div class="post-item">
-      <h3><a href="/2026/09/20/three/">页面出现乱码文字并解决</a></h3>
-      <p>暂无摘要</p>
-    </div>
-  
-    <div class="post-item">
-      <h3><a href="/2026/09/19/two/">删除或换掉reimu主题</a></h3>
-      <p>暂无摘要</p>
-    </div>
-  
-    <div class="post-item">
-      <h3><a href="/2026/09/10/First/">🎉 零基础小白从零搭建 Hexo 博客踩坑全记录（附常用指令小抄）</a></h3>
-      <p>暂无摘要</p>
-    </div>
-  
-</div>
+        <h1>页面出现乱码文字并解决</h1>
+<h2 id="🔍-为什么是乱码？"><a href="#🔍-为什么是乱码？" class="headerlink" title="🔍 为什么是乱码？"></a>🔍 为什么是乱码？</h2><p>用的是 Windows 自带的“记事本”编辑的 index.ejs。记事本默认会用“ANSI（中文系统下是 GBK）”格式保存文件。</p>
+<p>但 Hexo 和浏览器默认用“UTF-8”格式去读。就像你用英语发音规则去读拼音，读出来肯定听不懂。</p>
+<h2 id="🛠️-两步解决乱码："><a href="#🛠️-两步解决乱码：" class="headerlink" title="🛠️ 两步解决乱码："></a>🛠️ 两步解决乱码：</h2><h3 id="第一步：在-HTML-里加上-UTF-8-声明（必须做）"><a href="#第一步：在-HTML-里加上-UTF-8-声明（必须做）" class="headerlink" title="第一步：在 HTML 里加上 UTF-8 声明（必须做）"></a>第一步：在 HTML 里加上 UTF-8 声明（必须做）</h3><p>打开 themes&#x2F;my-theme&#x2F;layout&#x2F;index.ejs 文件，把 <head> 那一块改成这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>  <span class="comment">&lt;!-- 核心就加这一行 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>&lt;%= config.title %&gt;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="第二步：把文件重新保存为-UTF-8-格式（关键！）"><a href="#第二步：把文件重新保存为-UTF-8-格式（关键！）" class="headerlink" title="第二步：把文件重新保存为 UTF-8 格式（关键！）"></a>第二步：把文件重新保存为 UTF-8 格式（关键！）</h3><p>加了那行代码后，不要直接点保存，否则还是乱码。你需要另存为：</p>
+<p>在记事本里点击左上角的 “文件” -&gt; “另存为”。</p>
+<p>在底部找到 “编码” 下拉菜单。</p>
+<p>把原来的 ANSI 改为 UTF-8 。</p>
+<p>覆盖原来的 index.ejs 文件保存。</p>
+<p>💡 强烈建议：为了以后不再受这个乱码的折磨，强烈建议你花 5 分钟下载一个免费工具 VS Code（code.visualstudio.com）。VS Code 默认就是 UTF-8，而且能高亮显示代码，你改完后以后基本不会再遇到编码问题了。</p>
+<h2 id="🚀-第三步：重新预览"><a href="#🚀-第三步：重新预览" class="headerlink" title="🚀 第三步：重新预览"></a>🚀 第三步：重新预览</h2><p>去 Git Bash 里按 Ctrl + C 停掉之前的本地服务器，然后重新执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>再去 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 看，乱码应该全消失，变成你写的中文了！</p>
+<hr>
+<h3 id="更新时间：2026年9月20日"><a href="#更新时间：2026年9月20日" class="headerlink" title="更新时间：2026年9月20日"></a><em>更新时间：2026年9月20日</em></h3>
       </div>
     
   </main>
