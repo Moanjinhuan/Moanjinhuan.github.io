@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>墨安槿幻的幻想之境</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta name="generator" content="Hexo 8.1.2"></head>
+<body>
+  <!-- 全局背景压暗遮罩 -->
+  <div class="bg-overlay"></div>
+
+    <!-- 加载动画 (八卦阵) -->
+  <div id="loader">
+    <div class="bagua-wrap">
+      <!-- 中心太极（现在用CSS画，以后你可以换成图片） -->
+      <div class="taiji"></div>
+      <!-- 八个方位的发光点 -->
+      <div class="bagua-dots">
+        <div class="dot" style="--color: #ffffff;"></div>
+        <div class="dot" style="--color: #ff4d4d;"></div>
+        <div class="dot" style="--color: #ffa500;"></div>
+        <div class="dot" style="--color: #ffff00;"></div>
+        <div class="dot" style="--color: #00ff00;"></div>
+        <div class="dot" style="--color: #00ffff;"></div>
+        <div class="dot" style="--color: #0000ff;"></div>
+        <div class="dot" style="--color: #800080;"></div>
+      </div>
+    </div>
+    <p>正在进入墨安槿幻的幻想窝...</p>
+  </div>
+
+  <!-- 顶部半透明导航栏 -->
+  <header id="navbar">
+    <div class="logo1">
+      <img src="/images/logo1.jpg" alt="logo1">
+    </div>
+    <nav>
+      <a href="/">首页</a>
+      <a href="/archives">归档</a>
+      <a href="/works/">我的作品展示</a>
+      <a href="/kids/">孩子们的窝</a>
+      <a href="/links/">咱们友情的链接</a>
+      <a href="/guestbook/">留言板</a>
+      <a href="/timeline/">异世界时间线</a>
+      <a href="/about/">关于</a>
+      <!-- 明暗切换按钮 -->
+      <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </nav>
+  </header>
+
+  <!-- 主体内容判断：首页全屏，其他页面套卡片 -->
+      <main>
+    <!-- 首页 和 关于页 全屏展示，其他页面（归档、文章）才套白底卡片 -->
+    
+      <div class="container">
+        <h1>搭建页面“骨架”（引入layout.ejs）以及让页面漂亮起来（加入css）</h1>
+<h2 id="🏗️-第一步：搭建页面“骨架”（引入-layout-ejs）"><a href="#🏗️-第一步：搭建页面“骨架”（引入-layout-ejs）" class="headerlink" title="🏗️ 第一步：搭建页面“骨架”（引入 layout.ejs）"></a>🏗️ 第一步：搭建页面“骨架”（引入 layout.ejs）</h2><p>现在的 index.ejs 既充当了网页外壳，又写了文章列表，这很乱。标准做法是把“外壳”独立出来。</p>
+<h3 id="1-在-themes-my-theme-layout-文件夹里，新建一个文件，叫-layout-ejs。"><a href="#1-在-themes-my-theme-layout-文件夹里，新建一个文件，叫-layout-ejs。" class="headerlink" title="1. 在 themes&#x2F;my-theme&#x2F;layout&#x2F; 文件夹里，新建一个文件，叫 layout.ejs。"></a>1. 在 themes&#x2F;my-theme&#x2F;layout&#x2F; 文件夹里，新建一个文件，叫 layout.ejs。</h3><h3 id="2-把下面这段通用骨架代码复制进去（注意-这一行，这是核心）："><a href="#2-把下面这段通用骨架代码复制进去（注意-这一行，这是核心）：" class="headerlink" title="2. 把下面这段通用骨架代码复制进去（注意 &lt;%- body %&gt; 这一行，这是核心）："></a>2. 把下面这段通用骨架代码复制进去（注意 &lt;%- body %&gt; 这一行，这是核心）：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>&lt;%= config.title %&gt;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 引入刚刚写好的 CSS 样式文件，注意路径开头是斜杠 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/css/style.css&quot;</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>欢迎来到我的博客<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/&quot;</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span> | </span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/archives&quot;</span>&gt;</span>归档<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">&lt;!-- 🌟 这里就是魔术发生的地方，其他页面的内容会被塞进这里 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">main</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    &lt;%- body %&gt; </span><br><span class="line">  <span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>© &lt;%= new Date().getFullYear() %&gt; 我的专属博客<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-然后，把你现在的-index-ejs-内容清空，只保留最核心的文章列表代码："><a href="#3-然后，把你现在的-index-ejs-内容清空，只保留最核心的文章列表代码：" class="headerlink" title="3. 然后，把你现在的 index.ejs 内容清空，只保留最核心的文章列表代码："></a>3. 然后，把你现在的 index.ejs 内容清空，只保留最核心的文章列表代码：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>最新文章<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">&lt;% page.posts.each(function(post)&#123; %&gt;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;post-item&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&lt;%- url_for(post.path) %&gt;&quot;</span>&gt;</span>&lt;%= post.title %&gt;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&lt;%= post.excerpt || &#x27;暂无摘要&#x27; %&gt;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&lt;% &#125;); %&gt;</span><br></pre></td></tr></table></figure>
+<p>保存后，在 Git Bash 里跑 hexo clean &amp;&amp; hexo s，刷新 localhost:4000。你会发现页面有了页头、导航栏和页脚，文章列表在中间。</p>
+<h2 id="🎨-第二步：让页面漂亮起来（加上-CSS）"><a href="#🎨-第二步：让页面漂亮起来（加上-CSS）" class="headerlink" title="🎨 第二步：让页面漂亮起来（加上 CSS）"></a>🎨 第二步：让页面漂亮起来（加上 CSS）</h2><p>编写ing</p>
+<hr>
+<h3 id="更新时间：2026年9月20日"><a href="#更新时间：2026年9月20日" class="headerlink" title="更新时间：2026年9月20日"></a><em>更新时间：2026年9月20日</em></h3>
+      </div>
+    
+  </main>
+
+   <script>
+    // 隐藏加载动画
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 800); // 等淡出动画结束
+      }, 2000); // 强制显示2秒
+    });
+  </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // ========== 1. 加载动画（2秒后消失） ==========
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 800); // 等淡出动画结束
+      }, 2000); // 强制显示2秒
+
+      // ========== 2. 明暗模式切换（水波荡漾） ==========
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function(e) {
+          const x = e.clientX;
+          const y = e.clientY;
+          const ripple = document.createElement('div');
+          ripple.className = 'theme-ripple';
+          ripple.style.left = x + 'px';
+          ripple.style.top = y + 'px';
+          
+          const maxRadius = Math.hypot(window.innerWidth, window.innerHeight);
+          ripple.style.width = ripple.style.height = maxRadius * 2 + 'px';
+          
+          document.body.appendChild(ripple);
+
+          requestAnimationFrame(() => {
+            ripple.style.transform = 'translate(-50%, -50%) scale(1)';
+          });
+
+          setTimeout(() => {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            themeToggle.textContent = isLight ? '☀️' : '🌙';
+            ripple.remove();
+          }, 800);
+        });
+      }
+
+      // ========== 3. 关于页面：滚动切换九宫格角色 ==========
+      const panels = document.querySelectorAll('.character-panel');
+      if (panels.length > 0) {
+        const circle = document.getElementById('character-visual');
+        const numberEl = document.getElementById('character-number');
+        
+        // ⚠️ 你以后画好角色图，就把这里的渐变替换成图片路径，比如 ['/images/char1.png', ...]
+        const styles = [
+          'linear-gradient(135deg, #667eea, #764ba2)',
+          'linear-gradient(135deg, #f093fb, #f5576c)',
+          'linear-gradient(135deg, #4facfe, #00f2fe)',
+          'linear-gradient(135deg, #43e97b, #38f9d7)',
+          'linear-gradient(135deg, #fa709a, #fee140)',
+          'linear-gradient(135deg, #a18cd1, #fbc2eb)',
+          'linear-gradient(135deg, #ffecd2, #fcb69f)',
+          'linear-gradient(135deg, #ff9a9e, #fecfef)',
+          'linear-gradient(135deg, #a1c4fd, #c2e9fb)'
+        ];
+
+        let currentIndex = 0;
+
+        function switchCharacter(index) {
+          if (index === currentIndex) return;
+          
+          circle.style.transform = 'scale(0.8)';
+          circle.style.opacity = '0.3';
+
+          setTimeout(() => {
+            circle.style.background = styles[index % styles.length];
+            if (numberEl) numberEl.textContent = String(index + 1).padStart(2, '0');
+            circle.style.transform = 'scale(1)';
+            circle.style.opacity = '1';
+            currentIndex = index;
+          }, 300);
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const index = parseInt(entry.target.getAttribute('data-index')) - 1;
+              panels.forEach(p => p.classList.remove('active'));
+              entry.target.classList.add('active');
+              switchCharacter(index);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        panels.forEach(panel => observer.observe(panel));
+      }
+      
+    });
+  </script>
+</body>
+</html>
