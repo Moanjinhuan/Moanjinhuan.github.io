@@ -31,13 +31,18 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://moanjinhuan.github.io/about/</loc>
-    <lastmod>2026-11-14T02:16:28.391Z</lastmod>
+    <loc>https://moanjinhuan.github.io/guestbook/</loc>
+    <lastmod>2026-11-14T02:16:28.499Z</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://moanjinhuan.github.io/links/</loc>
-    <lastmod>2026-11-14T02:16:28.473Z</lastmod>
+    <loc>https://moanjinhuan.github.io/kids/</loc>
+    <lastmod>2026-11-14T02:16:28.455Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://moanjinhuan.github.io/about/</loc>
+    <lastmod>2026-11-14T02:16:28.391Z</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -46,18 +51,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://moanjinhuan.github.io/guestbook/</loc>
-    <lastmod>2026-11-14T02:16:28.499Z</lastmod>
+    <loc>https://moanjinhuan.github.io/links/</loc>
+    <lastmod>2026-11-14T02:16:28.473Z</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://moanjinhuan.github.io/works/</loc>
     <lastmod>2026-11-14T02:16:28.433Z</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://moanjinhuan.github.io/kids/</loc>
-    <lastmod>2026-11-14T02:16:28.455Z</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
