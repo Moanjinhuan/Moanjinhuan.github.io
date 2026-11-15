@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>🎉 零基础小白从零搭建 Hexo 博客踩坑全记录（附常用指令小抄） · 墨安槿幻的幻想之境</title>
+<meta name="description" content="">
+<meta name="author" content="墨安槿幻">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="google-site-verification" content="PJ_oe72HgSgTvavZufeP9fsTEIMd_7yJZGYX2Ub_J50">
+
+
+<meta name="keywords" content="墨安槿幻,幻想之境,拟像空间,个人博客,Hexo,东方Project,术力口">
+<link rel="canonical" href="https://moanjinhuan.github.io/2026/09/10/First/">
+
+<!-- 分享卡片 -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="墨安槿幻的幻想之境">
+<meta property="og:title" content="🎉 零基础小白从零搭建 Hexo 博客踩坑全记录（附常用指令小抄）">
+<meta property="og:description" content="">
+<meta property="og:url" content="https://moanjinhuan.github.io/2026/09/10/First/">
+<meta property="og:image" content="https://moanjinhuan.github.io/images/og.jpg">
+<meta property="og:locale" content="zh_CN">
+
+<meta property="article:published_time" content="2026-09-10T06:24:10.000Z">
+<meta property="article:modified_time" content="2026-09-10T06:24:10.000Z">
+<meta property="article:author" content="墨安槿幻">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🎉 零基础小白从零搭建 Hexo 博客踩坑全记录（附常用指令小抄）">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://moanjinhuan.github.io/images/og.jpg">
+
+<!-- 图标 -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="墨安槿幻的幻想之境" href="/atom.xml">
+<meta name="theme-color" content="#0a0d12">
+
+<!-- 在样式加载前定好明暗，避免闪白 -->
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t !== 'light' && t !== 'dark') t = 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+
+<link rel="stylesheet" href="/css/style.css">
+<noscript><style>.intro{display:none!important}.menu-toggle{display:none!important}</style></noscript>
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","name":"🎉 零基础小白从零搭建 Hexo 博客踩坑全记录（附常用指令小抄）","url":"https://moanjinhuan.github.io/2026/09/10/First/","description":"","inLanguage":"zh-CN","author":{"@type":"Person","name":"墨安槿幻","url":"https://moanjinhuan.github.io/about/"},"publisher":{"@type":"Person","name":"墨安槿幻"},"sameAs":["https://github.com/Moanjinhuan"],"headline":"🎉 零基础小白从零搭建 Hexo 博客踩坑全记录（附常用指令小抄）","datePublished":"2026-09-10T06:24:10.000Z","dateModified":"2026-09-10T06:24:10.000Z","image":"https://moanjinhuan.github.io/images/og.jpg","mainEntityOfPage":"https://moanjinhuan.github.io/2026/09/10/First/","keywords":"Hexo,博客旅途的起点,建站","articleSection":"建站手记"}</script>
+<meta name="generator" content="Hexo 8.1.2">
+
+</head>
+<body class="is-post">
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  
+
+  
+<header class="site-header" id="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="/" aria-label="墨安槿幻的幻想之境，回到首页">
+      <span class="brand__mark"><img src="/images/avatar.jpg" alt="" width="44" height="44"></span>
+      <span class="brand__text">
+        <b>墨安槿幻</b>
+        <small>MOANJINHUAN</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      
+        
+          <a class="nav__link " href="/">首页</a>
+        
+      
+        
+          <a class="nav__link " href="/archives/">文集</a>
+        
+      
+        
+          <div class="nav__item nav__item--has-children">
+            <a class="nav__link " href="/works/">
+              世界
+              <svg class="nav__chevron" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+            </a>
+            <div class="nav__panel">
+              
+                <a class="nav__panel-link" href="/works/">
+                  <span>我的作品</span>
+                  <em>WORKS</em>
+                </a>
+              
+                <a class="nav__panel-link" href="/kids/">
+                  <span>孩子们的窝</span>
+                  <em>KIDS</em>
+                </a>
+              
+                <a class="nav__panel-link" href="/timeline/">
+                  <span>异世界时间线</span>
+                  <em>TIMELINE</em>
+                </a>
+              
+                <a class="nav__panel-link" href="/links/">
+                  <span>友情链接</span>
+                  <em>LINKS</em>
+                </a>
+              
+            </div>
+          </div>
+        
+      
+        
+          <a class="nav__link " href="/about/">关于</a>
+        
+      
+        
+          <a class="nav__link " href="/guestbook/">留言</a>
+        
+      
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="切换明暗模式" title="切换明暗模式">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg>
+      </button>
+      <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="read-progress" aria-hidden="true"><span id="read-progress-bar"></span></div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav__inner">
+    <p class="mobile-nav__label">浏览</p>
+    
+      <a class="mobile-nav__link " href="/">首页</a>
+      
+    
+      <a class="mobile-nav__link " href="/archives/">文集</a>
+      
+    
+      <a class="mobile-nav__link " href="/works/">世界</a>
+      
+        <a class="mobile-nav__link mobile-nav__link--sub" href="/works/">我的作品</a>
+      
+        <a class="mobile-nav__link mobile-nav__link--sub" href="/kids/">孩子们的窝</a>
+      
+        <a class="mobile-nav__link mobile-nav__link--sub" href="/timeline/">异世界时间线</a>
+      
+        <a class="mobile-nav__link mobile-nav__link--sub" href="/links/">友情链接</a>
+      
+    
+      <a class="mobile-nav__link " href="/about/">关于</a>
+      
+    
+      <a class="mobile-nav__link " href="/guestbook/">留言</a>
+      
+    
+    <div class="mobile-nav__foot">
+      <a href="https://github.com/Moanjinhuan" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="/atom.xml">RSS ↗</a>
+    </div>
+  </div>
+</div>
+<div class="nav-backdrop" id="nav-backdrop" hidden></div>
+
+
+  <main id="main">
+    
+
+<article class="post" id="top">
+  <header class="post-header">
+    <div class="wrap wrap--narrow">
+      <nav class="breadcrumb" aria-label="位置">
+        <a href="/">首页</a><span aria-hidden="true">/</span>
+        <a href="/archives/">文集</a><span aria-hidden="true">/</span>
+        <span aria-current="page">🎉 零基础小白从零搭建 Hexo 博客踩坑全记录（附常用指令小抄）</span>
+      </nav>
+
+      <div class="post-header__tags">
+        
+          <a class="chip chip--gold" href="/categories/%E5%BB%BA%E7%AB%99%E6%89%8B%E8%AE%B0/">建站手记</a>
+        
+        
+          <a class="chip" href="/tags/Hexo/">Hexo</a>
+        
+          <a class="chip" href="/tags/%E5%8D%9A%E5%AE%A2%E6%97%85%E9%80%94%E7%9A%84%E8%B5%B7%E7%82%B9/">博客旅途的起点</a>
+        
+          <a class="chip" href="/tags/%E5%BB%BA%E7%AB%99/">建站</a>
+        
+      </div>
+
+      <h1 class="post-title">🎉 零基础小白从零搭建 Hexo 博客踩坑全记录（附常用指令小抄）</h1>
+
+      <div class="post-meta">
+        <time datetime="2026-09-10T06:24:10.000Z">2026 年 09 月 10 日</time>
+        <span class="dot" aria-hidden="true"></span>
+        <span>7 分钟阅读</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>约 2767 字</span>
+        
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap post-layout">
+    <div class="post-main">
+      <div class="prose" id="post-content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<h4 id="作为一个完全零基础的小白，从最初不知道命令行是什么，到最后成功把博客上线、换上漂亮的Reimu主题、改好头像，一路踩坑一路填，终于拥有了自己的网站：https-moanjinhuan-github-io。"><a href="#作为一个完全零基础的小白，从最初不知道命令行是什么，到最后成功把博客上线、换上漂亮的Reimu主题、改好头像，一路踩坑一路填，终于拥有了自己的网站：https-moanjinhuan-github-io。" class="headerlink" title="作为一个完全零基础的小白，从最初不知道命令行是什么，到最后成功把博客上线、换上漂亮的Reimu主题、改好头像，一路踩坑一路填，终于拥有了自己的网站：https://moanjinhuan.github.io。"></a>作为一个完全零基础的小白，从最初不知道命令行是什么，到最后成功把博客上线、换上漂亮的Reimu主题、改好头像，一路踩坑一路填，终于拥有了自己的网站：<a target="_blank" rel="noopener" href="https://moanjinhuan.github.io./">https://moanjinhuan.github.io。</a></h4><h4 id="这篇文章记录了我整个搭建过程、遇到的报错以及解决办法，希望帮到同样零基础的你！"><a href="#这篇文章记录了我整个搭建过程、遇到的报错以及解决办法，希望帮到同样零基础的你！" class="headerlink" title="这篇文章记录了我整个搭建过程、遇到的报错以及解决办法，希望帮到同样零基础的你！"></a>这篇文章记录了我整个搭建过程、遇到的报错以及解决办法，希望帮到同样零基础的你！</h4></blockquote>
+<span id="more"></span>
+
+<hr>
+<h2 id="🛠️-第一阶段：环境准备"><a href="#🛠️-第一阶段：环境准备" class="headerlink" title="🛠️ 第一阶段：环境准备"></a>🛠️ 第一阶段：环境准备</h2><h2 id="1-注册-GitHub-账号"><a href="#1-注册-GitHub-账号" class="headerlink" title="1. 注册 GitHub 账号"></a>1. 注册 GitHub 账号</h2><blockquote>
+<h4 id="访问-https-github-com-，点击-Sign-up-注册。记住你的用户名，这是你博客网址的一部分。"><a href="#访问-https-github-com-，点击-Sign-up-注册。记住你的用户名，这是你博客网址的一部分。" class="headerlink" title="访问 https://github.com/，点击 Sign up 注册。记住你的用户名，这是你博客网址的一部分。"></a>访问 <a target="_blank" rel="noopener" href="https://github.com/%EF%BC%8C%E7%82%B9%E5%87%BB">https://github.com/，点击</a> Sign up 注册。记住你的用户名，这是你博客网址的一部分。</h4></blockquote>
+<h2 id="2-安装-Git-和-Node-js"><a href="#2-安装-Git-和-Node-js" class="headerlink" title="2. 安装 Git 和 Node.js"></a>2. 安装 Git 和 Node.js</h2><blockquote>
+<h4 id="下载安装-Git-时，一定要注意这三个选项："><a href="#下载安装-Git-时，一定要注意这三个选项：" class="headerlink" title="下载安装 Git 时，一定要注意这三个选项："></a>下载安装 Git 时，一定要注意这三个选项：</h4><blockquote>
+<ul>
+<li>默认编辑器：选 VS Code 或 Notepad。</li>
+<li>PATH 环境变量：选 Git from the command line and also from 3rd-party software（第二项）。</li>
+<li>换行符转换：保持默认第一项即可。</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="3-安装-Hexo"><a href="#3-安装-Hexo" class="headerlink" title="3. 安装 Hexo"></a>3. 安装 Hexo</h2><blockquote>
+<p>❌ 遇到的坑： 错误地打开了 Node.js 的快捷方式，在里面输入 npm i -g hexo-cli，结果报错 npm should be run outside of the Node.js REPL…。</p>
+<p>✅ 解决办法： 退出 Node.js 环境（按 Ctrl + C 或 Ctrl + D），打开 Git Bash（在桌面右键选择 Git Bash Here）。在 Git Bash 中输入：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">npm i -g hexo-cli</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>🏗️ 第二阶段：初始化博客和部署到 GitHub</p>
+<h2 id="1-初始化博客"><a href="#1-初始化博客" class="headerlink" title="1. 初始化博客"></a>1. 初始化博客</h2><h2 id="我在-Moanjinhuan-目录下直接执行了："><a href="#我在-Moanjinhuan-目录下直接执行了：" class="headerlink" title="我在 ~&#x2F;Moanjinhuan 目录下直接执行了："></a>我在 ~&#x2F;Moanjinhuan 目录下直接执行了：</h2><figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="code"><pre><span class="line">&#123;hexo init</span><br><span class="line">npm install</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：并没有单独建 blog 文件夹，直接在 Moanjinhuan 文件夹里初始化了。</p>
+<h2 id="2-创建-GitHub-Pages-仓库"><a href="#2-创建-GitHub-Pages-仓库" class="headerlink" title="2. 创建 GitHub Pages 仓库"></a>2. 创建 GitHub Pages 仓库</h2><blockquote>
+<h4 id="在-GitHub-新建仓库，名字必须是-你的用户名-github-io（例如-Moanjinhuan-github-io），设为-Public。"><a href="#在-GitHub-新建仓库，名字必须是-你的用户名-github-io（例如-Moanjinhuan-github-io），设为-Public。" class="headerlink" title="在 GitHub 新建仓库，名字必须是 你的用户名.github.io（例如 Moanjinhuan.github.io），设为 Public。"></a>在 GitHub 新建仓库，名字必须是 你的用户名.github.io（例如 Moanjinhuan.github.io），设为 Public。</h4></blockquote>
+<h2 id="3-连接本地与远程（九九八十一难开始）"><a href="#3-连接本地与远程（九九八十一难开始）" class="headerlink" title="3. 连接本地与远程（九九八十一难开始）"></a>3. 连接本地与远程（九九八十一难开始）</h2><blockquote>
+<h4 id="❌-遇到的坑一（SSH-连接被拒）："><a href="#❌-遇到的坑一（SSH-连接被拒）：" class="headerlink" title="❌ 遇到的坑一（SSH 连接被拒）："></a>❌ 遇到的坑一（SSH 连接被拒）：</h4><p>使用 git clone <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;">git@github.com</a>:… 报错 Connection refused。<br>✅ 解决办法： 改用 HTTPS 协议。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/Moanjinhuan/Moanjinhuan.github.io.git</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="❌-遇到的坑二（Git-身份未知）："><a href="#❌-遇到的坑二（Git-身份未知）：" class="headerlink" title="❌ 遇到的坑二（Git 身份未知）："></a>❌ 遇到的坑二（Git 身份未知）：</h4><p>执行 hexo deploy 报错 Author identity unknown。<br>✅ 解决办法： 在 Git Bash 中告诉 Git 我是谁：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;Moanjinhuan&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="❌-遇到的坑三（授权卡住）："><a href="#❌-遇到的坑三（授权卡住）：" class="headerlink" title="❌ 遇到的坑三（授权卡住）："></a>❌ 遇到的坑三（授权卡住）：</h4><p>弹窗要求登录，浏览器授权卡死。<br>✅ 解决办法： 选择浏览器授权（Sign in with your browser）或直接使用 GitHub Token。去 GitHub 的 Settings -&gt; Developer settings -&gt; Personal access tokens 生成一个 Token（勾选 repo 权限），粘贴到密码框即可。</p>
+</blockquote>
+<blockquote>
+<h4 id="❌-遇到的坑四（Pages-设置无法保存）："><a href="#❌-遇到的坑四（Pages-设置无法保存）：" class="headerlink" title="❌ 遇到的坑四（Pages 设置无法保存）："></a>❌ 遇到的坑四（Pages 设置无法保存）：</h4><p>在 GitHub 仓库 Settings -&gt; Pages 里，选 main 分支后 Save 按钮点不了。<br>✅ 解决办法： 因为页面顶部提示“已从 main 分支构建”，说明已经配置好了，无需重复保存。</p>
+</blockquote>
+<h2 id="4-配置-Hexo-部署文件"><a href="#4-配置-Hexo-部署文件" class="headerlink" title="4. 配置 Hexo 部署文件"></a>4. 配置 Hexo 部署文件</h2><p>在根目录 _config.yml 底部修改：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/Moanjinhuan/Moanjinhuan.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+
+<h2 id="🎨-第三阶段：更换-Reimu-主题与个性化"><a href="#🎨-第三阶段：更换-Reimu-主题与个性化" class="headerlink" title="🎨 第三阶段：更换 Reimu 主题与个性化"></a>🎨 第三阶段：更换 Reimu 主题与个性化</h2><h4 id="1-下载主题"><a href="#1-下载主题" class="headerlink" title="1. 下载主题"></a>1. 下载主题</h4><p>在 ~&#x2F;Moanjinhuan 下执行：</p>
+<figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="code"><pre><span class="line">git clone https://github.com/D-Sketon/hexo-theme-reimu.git themes/reimu</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-启用主题并创建覆盖配置"><a href="#2-启用主题并创建覆盖配置" class="headerlink" title="2. 启用主题并创建覆盖配置"></a>2. 启用主题并创建覆盖配置</h4><p>将 _config.yml 中的 theme 改为 reimu。<br>为了以后更新方便，在根目录创建 _config.reimu.yml 文件，以后主题的配置都在这里改。</p>
+<p>❌ 遇到的坑五（线上显示“xiba”，本地正常）：<br>改完配置部署后，线上一直显示我之前随便测试的“xiba”。<br>✅ 解决办法： 重新执行部署三连，并在浏览器按 Ctrl + F5 强制刷新，清除 GitHub 的顽固缓存。</p>
+<figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-修改网站标题和头像"><a href="#3-修改网站标题和头像" class="headerlink" title="3. 修改网站标题和头像"></a>3. 修改网站标题和头像</h4><p>修改标题：在 _config.reimu.yml 里找到 title:，修改冒号后面的文字（注意冒号后要有空格）。</p>
+<p>修改头像：</p>
+<p>把图片重命名为纯英文如 bayunzi.jpg。<br>把图片放到 Moanjinhuan&#x2F;source&#x2F;_data&#x2F;avatar&#x2F; 文件夹里。<br>在 _config.reimu.yml 中找到 avatar:，改成 avatar: “bayunzi.jpg”（千万不要加路径，只写文件名）。</p>
+<h2 id="📝-第四阶段：日常维护与指令小抄"><a href="#📝-第四阶段：日常维护与指令小抄" class="headerlink" title="📝 第四阶段：日常维护与指令小抄"></a>📝 第四阶段：日常维护与指令小抄</h2><p>⭐ 日常写博客“三板斧”（最重要！）<br>以后每次写完文章，或者改完配置，只需要在 Git Bash 里依次输入下面这三行：</p>
+<figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="code"><pre><span class="line">hexo clean      # 清理旧缓存</span><br><span class="line">hexo generate   # 生成新网页 (可简写 hexo g)</span><br><span class="line">hexo deploy     # 推送到 GitHub (可简写 hexo d)</span><br></pre></td></tr></table></figure>
+
+<h3 id="💡-懒人极致版（一行搞定）："><a href="#💡-懒人极致版（一行搞定）：" class="headerlink" title="💡 懒人极致版（一行搞定）："></a>💡 懒人极致版（一行搞定）：</h3><figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h3 id="✍️-写新文章"><a href="#✍️-写新文章" class="headerlink" title="✍️ 写新文章"></a>✍️ 写新文章</h3><figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="code"><pre><span class="line">hexo new post &quot;文章标题&quot;</span><br></pre></td></tr></table></figure>
+
+<p>然后去 source&#x2F;_posts&#x2F; 文件夹里找那个 .md 文件写内容。</p>
+<h3 id="🧭-迷路指南"><a href="#🧭-迷路指南" class="headerlink" title="🧭 迷路指南"></a>🧭 迷路指南</h3><ul>
+<li>cd ~&#x2F;Moanjinhuan：回到你的博客目录（每次打开 Git Bash 的第一件事）。</li>
+<li>cd ..：退回到上一级文件夹。</li>
+<li>ls：看看当前文件夹里有什么。</li>
+<li>pwd：看看我现在在哪个路径。</li>
+</ul>
+<h3 id="🚀-偷懒"><a href="#🚀-偷懒" class="headerlink" title="🚀 偷懒"></a>🚀 偷懒</h3><ul>
+<li>按键盘上的 ↑（上箭头）：自动出现刚刚输入过的命令，不用手打！</li>
+<li>按键盘上的 Tab 键：自动补全文件名或路径，防止拼错。</li>
+</ul>
+<h3 id="💡-避坑总结"><a href="#💡-避坑总结" class="headerlink" title="💡 避坑总结"></a>💡 避坑总结</h3><ol>
+<li><p>所有命令都在 Git Bash 里敲，不要打开 Node.js 去敲！</p>
+</li>
+<li><p>改外观（头像、标题、颜色）都在 _config.reimu.yml 里改。</p>
+</li>
+<li><p>改了配置一定要重新执行部署三连，并且浏览器按 Ctrl + F5 强制刷新。</p>
+</li>
+<li><p>非常重要：定期备份你的本地 Moanjinhuan 文件夹，因为你的文章源码全在这里！</p>
+</li>
+</ol>
+<p>希望这篇文章能记录下我今天的努力，也能帮助到未来的自己。博客已上线，接下来就是好好写文章啦！🎉</p>
+<hr>
+<p>编辑中，<strong>更新时间：2026年9月16日</strong></p>
+
+      </div>
+
+      
+      <div class="post-tags">
+        <span>标签</span>
+        
+          <a class="chip" href="/tags/Hexo/">Hexo</a>
+        
+          <a class="chip" href="/tags/%E5%8D%9A%E5%AE%A2%E6%97%85%E9%80%94%E7%9A%84%E8%B5%B7%E7%82%B9/">博客旅途的起点</a>
+        
+          <a class="chip" href="/tags/%E5%BB%BA%E7%AB%99/">建站</a>
+        
+      </div>
+      
+
+      <div class="author-card">
+        <img class="author-card__avatar" src="/images/avatar.jpg" alt="墨安槿幻" width="64" height="64" loading="lazy">
+        <div class="author-card__body">
+          <p class="author-card__name">墨安槿幻<span>MOANJINHUAN</span></p>
+          <p class="author-card__bio">把现实改写成虚拟，把想留下的都留在这里。</p>
+        </div>
+        <a class="author-card__link" href="/about/">关于我 →</a>
+      </div>
+
+      <nav class="post-nav post-nav--single" aria-label="文章导航">
+        
+        <a class="post-nav__item" href="/2026/09/19/two/">
+          <span class="post-nav__label">← 上一篇</span>
+          <span class="post-nav__title">删除或换掉 reimu 主题</span>
+        </a>
+        
+        <span class="post-nav__item post-nav__item--empty"></span>
+      </nav>
+
+      
+    </div>
+
+    <aside class="post-aside" aria-label="目录">
+      <div class="toc" id="toc">
+        <p class="toc__title">目录</p>
+        <nav class="toc__nav" id="toc-nav"></nav>
+      </div>
+      <a class="post-aside__top" href="#top">回到顶部 ↑</a>
+    </aside>
+  </div>
+</article>
+
+
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-brand__name">墨安槿幻<span>MOANJINHUAN</span></p>
+        <p class="footer-brand__bio">把现实改写成虚拟，把想留下的都留在这里。</p>
+      </div>
+      <div class="footer-col">
+        <h3>浏览</h3>
+        <a href="/">首页</a>
+        <a href="/archives/">文集</a>
+        <a href="/about/">关于</a>
+        <a href="/guestbook/">留言</a>
+      </div>
+      <div class="footer-col">
+        <h3>世界</h3>
+        <a href="/works/">我的作品</a>
+        <a href="/kids/">孩子们的窝</a>
+        <a href="/timeline/">异世界时间线</a>
+        <a href="/links/">友情链接</a>
+      </div>
+      <div class="footer-col">
+        <h3>连接</h3>
+        <a href="https://github.com/Moanjinhuan" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="/atom.xml">RSS 订阅 ↗</a>
+        <a href="/sitemap.xml">站点地图 ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 墨安槿幻 · 保留所有权利</span>
+      <span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 · 墨境主题</span>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="to-top" type="button" aria-label="回到顶部" title="回到顶部">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
