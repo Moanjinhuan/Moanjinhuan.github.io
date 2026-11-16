@@ -2,15 +2,15 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
   <title>墨安槿幻的幻想之境</title>
   <subtitle>墨安槿幻的个人博客。记录日常、幻想、角色与建站手记，一个 00 后上班族的自留地。</subtitle>
-  <link href="https://moanjinhuan.github.io/atom.xml" rel="self"/>
-  <link href="https://moanjinhuan.github.io/"/>
-  <id>https://moanjinhuan.github.io/</id>
+  <link href="https://moanjinhuan.top/atom.xml" rel="self"/>
+  <link href="https://moanjinhuan.top/"/>
+  <id>https://moanjinhuan.top/</id>
   <updated>2026-09-21T15:35:41.000Z</updated>
   <author><name>墨安槿幻</name></author>
   <entry>
     <title>搭建页面“骨架”（引入 layout.ejs）以及让页面漂亮起来（加入 css）</title>
-    <link href="https://moanjinhuan.github.io/2026/09/21/four/"/>
-    <id>https://moanjinhuan.github.io/2026/09/21/four/</id>
+    <link href="https://moanjinhuan.top/2026/09/21/four/"/>
+    <id>https://moanjinhuan.top/2026/09/21/four/</id>
     <published>2026-09-21T15:35:41.000Z</published>
     <updated>2026-09-21T15:35:41.000Z</updated>
     <category term="建站手记"/>
@@ -26,8 +26,8 @@
   </entry>
   <entry>
     <title>页面出现乱码文字并解决</title>
-    <link href="https://moanjinhuan.github.io/2026/09/20/three/"/>
-    <id>https://moanjinhuan.github.io/2026/09/20/three/</id>
+    <link href="https://moanjinhuan.top/2026/09/20/three/"/>
+    <id>https://moanjinhuan.top/2026/09/20/three/</id>
     <published>2026-09-20T01:51:11.000Z</published>
     <updated>2026-09-20T01:51:11.000Z</updated>
     <category term="建站手记"/>
@@ -51,8 +51,8 @@
   </entry>
   <entry>
     <title>删除或换掉 reimu 主题</title>
-    <link href="https://moanjinhuan.github.io/2026/09/19/two/"/>
-    <id>https://moanjinhuan.github.io/2026/09/19/two/</id>
+    <link href="https://moanjinhuan.top/2026/09/19/two/"/>
+    <id>https://moanjinhuan.top/2026/09/19/two/</id>
     <published>2026-09-19T00:39:09.000Z</published>
     <updated>2026-09-19T00:39:09.000Z</updated>
     <category term="建站手记"/>
@@ -99,8 +99,8 @@
   </entry>
   <entry>
     <title>🎉 零基础小白从零搭建 Hexo 博客踩坑全记录（附常用指令小抄）</title>
-    <link href="https://moanjinhuan.github.io/2026/09/10/First/"/>
-    <id>https://moanjinhuan.github.io/2026/09/10/First/</id>
+    <link href="https://moanjinhuan.top/2026/09/10/First/"/>
+    <id>https://moanjinhuan.top/2026/09/10/First/</id>
     <published>2026-09-10T06:24:10.000Z</published>
     <updated>2026-09-10T06:24:10.000Z</updated>
     <category term="建站手记"/>
@@ -134,7 +134,7 @@
 <h2 id="2-创建-GitHub-Pages-仓库"><a href="#2-创建-GitHub-Pages-仓库" class="headerlink" title="2. 创建 GitHub Pages 仓库"></a>2. 创建 GitHub Pages 仓库</h2><blockquote>
 <h4 id="在-GitHub-新建仓库，名字必须是-你的用户名-github-io（例如-Moanjinhuan-github-io），设为-Public。"><a href="#在-GitHub-新建仓库，名字必须是-你的用户名-github-io（例如-Moanjinhuan-github-io），设为-Public。" class="headerlink" title="在 GitHub 新建仓库，名字必须是 你的用户名.github.io（例如 Moanjinhuan.github.io），设为 Public。"></a>在 GitHub 新建仓库，名字必须是 你的用户名.github.io（例如 Moanjinhuan.github.io），设为 Public。</h4></blockquote>
 <h2 id="3-连接本地与远程（九九八十一难开始）"><a href="#3-连接本地与远程（九九八十一难开始）" class="headerlink" title="3. 连接本地与远程（九九八十一难开始）"></a>3. 连接本地与远程（九九八十一难开始）</h2><blockquote>
-<h4 id="❌-遇到的坑一（SSH-连接被拒）："><a href="#❌-遇到的坑一（SSH-连接被拒）：" class="headerlink" title="❌ 遇到的坑一（SSH 连接被拒）："></a>❌ 遇到的坑一（SSH 连接被拒）：</h4><p>使用 git clone <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#109;">git@github.com</a>:… 报错 Connection refused。<br>✅ 解决办法： 改用 HTTPS 协议。</p>
+<h4 id="❌-遇到的坑一（SSH-连接被拒）："><a href="#❌-遇到的坑一（SSH-连接被拒）：" class="headerlink" title="❌ 遇到的坑一（SSH 连接被拒）："></a>❌ 遇到的坑一（SSH 连接被拒）：</h4><p>使用 git clone <a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#117;&#98;&#46;&#99;&#x6f;&#109;">git@github.com</a>:… 报错 Connection refused。<br>✅ 解决办法： 改用 HTTPS 协议。</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/Moanjinhuan/Moanjinhuan.github.io.git</span><br></pre></td></tr></table></figure>
 
