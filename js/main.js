@@ -309,6 +309,7 @@
     };
 
     characterCards.forEach(function (card) {
+      if (card.classList.contains('character-card--empty')) return;
       card.addEventListener('click', function () { openCharacter(card); });
     });
 
@@ -319,4 +320,41 @@
       if (e.target === characterDialog) characterDialog.close();
     });
   }
+
+  /* ---------- 横向滑动卡（系列 / 角色） ---------- */
+  document.querySelectorAll('[data-carousel]').forEach(function (wrap) {
+    var track = wrap.querySelector('.carousel');
+    var prev = wrap.querySelector('[data-carousel-prev]');
+    var next = wrap.querySelector('[data-carousel-next]');
+    if (!track) return;
+
+    var step = function () {
+      var card = track.querySelector('.carousel__track > *');
+      if (!card) return 320;
+      var styles = window.getComputedStyle(track.querySelector('.carousel__track'));
+      var gap = parseInt(styles.columnGap || styles.gap || '26', 10) || 26;
+      return card.getBoundingClientRect().width + gap;
+    };
+
+    var sync = function () {
+      var max = track.scrollWidth - track.clientWidth;
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= max - 2;
+    };
+
+    if (prev) {
+      prev.addEventListener('click', function () {
+        track.scrollBy({ left: -step(), behavior: 'smooth' });
+      });
+    }
+    if (next) {
+      next.addEventListener('click', function () {
+        track.scrollBy({ left: step(), behavior: 'smooth' });
+      });
+    }
+
+    track.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  });
 })();
