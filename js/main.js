@@ -210,4 +210,113 @@
     s.setAttribute('data-loading', 'lazy');
     giscusContainer.appendChild(s);
   }
+
+  /* ---------- 作品筛选 ---------- */
+  var filterBar = document.getElementById('works-filters');
+  if (filterBar) {
+    var cards = Array.prototype.slice.call(document.querySelectorAll('#work-grid .work-card'));
+    var countEl = document.getElementById('works-count');
+    var filterEmpty = document.getElementById('works-filter-empty');
+    var filterState = { medium: 'all', origin: 'all' };
+
+    var applyFilters = function () {
+      var shown = 0;
+      cards.forEach(function (card) {
+        var ok = (filterState.medium === 'all' || card.getAttribute('data-medium') === filterState.medium)
+          && (filterState.origin === 'all' || card.getAttribute('data-origin') === filterState.origin);
+        card.hidden = !ok;
+        if (ok) shown += 1;
+      });
+      if (countEl) countEl.textContent = '共 ' + shown + ' 件';
+      if (filterEmpty) filterEmpty.classList.toggle('is-visible', cards.length > 0 && shown === 0);
+    };
+
+    filterBar.querySelectorAll('.filter-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var group = btn.getAttribute('data-group');
+        var value = btn.getAttribute('data-value');
+        filterState[group] = value;
+        filterBar.querySelectorAll('.filter-btn[data-group="' + group + '"]').forEach(function (b) {
+          var active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        applyFilters();
+      });
+    });
+
+    applyFilters();
+  }
+
+  /* ---------- 角色面板 ---------- */
+  var characterDialog = document.getElementById('character-dialog');
+  if (characterDialog) {
+    var characterCards = document.querySelectorAll('.character-card');
+    var charName = document.getElementById('character-dialog-name');
+    var charEn = document.getElementById('character-dialog-en');
+    var charRole = document.getElementById('character-dialog-role');
+    var charQuote = document.getElementById('character-dialog-quote');
+    var charDesc = document.getElementById('character-dialog-desc');
+    var charTags = document.getElementById('character-dialog-tags');
+    var charAvatar = document.getElementById('character-dialog-avatar');
+    var charInitial = document.getElementById('character-dialog-initial');
+    var charClose = document.getElementById('character-dialog-close');
+
+    var openCharacter = function (card) {
+      var name = card.getAttribute('data-name') || '';
+      var en = card.getAttribute('data-en') || '';
+      var role = card.getAttribute('data-role') || '';
+      var quote = card.getAttribute('data-quote') || '';
+      var desc = card.getAttribute('data-desc') || '';
+      var avatar = card.getAttribute('data-avatar') || '';
+      var tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+
+      charName.textContent = name;
+      charEn.textContent = en;
+      charEn.hidden = !en;
+      charRole.textContent = role;
+      charRole.hidden = !role;
+      charQuote.textContent = quote ? '「' + quote + '」' : '';
+      charQuote.hidden = !quote;
+      charDesc.textContent = desc;
+      charDesc.hidden = !desc;
+
+      charTags.innerHTML = '';
+      tags.forEach(function (tag) {
+        var span = document.createElement('span');
+        span.className = 'chip chip--small';
+        span.textContent = tag.trim();
+        charTags.appendChild(span);
+      });
+
+      if (avatar) {
+        charAvatar.src = avatar;
+        charAvatar.alt = name;
+        charAvatar.hidden = false;
+        charInitial.hidden = true;
+      } else {
+        charAvatar.removeAttribute('src');
+        charAvatar.hidden = true;
+        charInitial.textContent = name.slice(0, 1) || '?';
+        charInitial.hidden = false;
+      }
+
+      if (typeof characterDialog.showModal === 'function') {
+        characterDialog.showModal();
+      } else {
+        characterDialog.setAttribute('open', '');
+      }
+    };
+
+    characterCards.forEach(function (card) {
+      card.addEventListener('click', function () { openCharacter(card); });
+    });
+
+    if (charClose) {
+      charClose.addEventListener('click', function () { characterDialog.close(); });
+    }
+    characterDialog.addEventListener('click', function (e) {
+      if (e.target === characterDialog) characterDialog.close();
+    });
+  }
 })();
