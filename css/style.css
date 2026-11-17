@@ -1326,7 +1326,22 @@ html[data-theme='light'] .btn--primary:hover { background: #7f5d24; }
 .work-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 26px; }
 .work-card { border: 1px solid var(--line); background: var(--surface); overflow: hidden; transition: border-color 0.3s, transform 0.3s; }
 .work-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-.work-card__media { position: relative; aspect-ratio: 4 / 3; background: var(--surface-2); overflow: hidden; }
+.work-card__media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  border: 0;
+  background: var(--surface-2);
+  overflow: hidden;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: zoom-in;
+}
+button.work-card__media { appearance: none; }
+button.work-card__media:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .work-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
 .work-card:hover .work-card__media img { transform: scale(1.04); }
 .work-card__placeholder {
@@ -2433,4 +2448,92 @@ html[data-theme='light'] .btn--primary:hover { background: #7f5d24; }
 @media (max-width: 720px) {
   .layout-kids .page-head { padding: 120px 0 26px; }
   .layout-kids .section--plain { padding-top: 16px; }
+}
+
+/* ============================================================
+   作品大图灯箱
+   ============================================================ */
+.work-lightbox {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+}
+.work-lightbox::backdrop {
+  background: rgba(3, 5, 8, 0.92);
+  backdrop-filter: blur(8px);
+}
+.work-lightbox__inner {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 46px 32px 24px;
+}
+.work-lightbox__image {
+  max-width: min(92vw, 1180px);
+  max-height: 74vh;
+  object-fit: contain;
+  background: #f7f3ea;
+  border: 1px solid rgba(201, 168, 106, 0.5);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.65);
+}
+.work-lightbox__meta {
+  max-width: 760px;
+  text-align: center;
+}
+.work-lightbox__kicker {
+  margin: 0 0 6px;
+  color: var(--accent);
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+.work-lightbox__title {
+  margin: 0 0 8px;
+  color: #f2ece2;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+.work-lightbox__desc {
+  margin: 0;
+  color: rgba(233, 228, 218, 0.55);
+  font-size: 11.5px;
+  line-height: 1.8;
+}
+.work-lightbox__desc:empty { display: none; }
+.work-lightbox__close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--line-2);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.work-lightbox__close:hover { color: var(--accent); border-color: var(--accent); }
+body.has-lightbox { overflow: hidden; }
+@media (max-width: 720px) {
+  .work-lightbox__inner { padding: 54px 16px 20px; gap: 10px; }
+  .work-lightbox__image { max-width: 94vw; max-height: 70vh; }
+  .work-lightbox__close { top: 14px; right: 14px; width: 38px; height: 38px; }
 }

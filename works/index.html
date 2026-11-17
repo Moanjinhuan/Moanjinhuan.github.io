@@ -49,7 +49,7 @@
   })();
 </script>
 
-<link rel="stylesheet" href="/css/style.css?v=20261118a">
+<link rel="stylesheet" href="/css/style.css?v=20261118b">
 <noscript><style>.intro{display:none!important}.menu-toggle{display:none!important}</style></noscript>
 
 
@@ -222,12 +222,18 @@
       
         
         <article class="work-card" data-medium="插画" data-origin="二创">
-          <div class="work-card__media">
-            
-              <img src="/images/works/rumia.jpg" alt="露米娅" loading="lazy">
-            
+          
+          <button type="button" class="work-card__media"
+            data-work-image="/images/works/rumia.jpg"
+            data-work-title="露米娅"
+            data-work-medium="插画"
+            data-work-origin="二创"
+            data-work-desc="东方 Project 露米娅二创。私人稿件，禁止 AI 使用与商用。"
+            aria-label="查看大图：露米娅">
+            <img src="/images/works/rumia.jpg" alt="露米娅" loading="lazy">
             <span class="work-card__type">插画</span>
-          </div>
+          </button>
+          
           <div class="work-card__body">
             <div class="work-card__kicker"><span class="chip chip--small">二创</span></div>
             <h2>露米娅</h2>
@@ -238,12 +244,18 @@
       
         
         <article class="work-card" data-medium="插画" data-origin="二创">
-          <div class="work-card__media">
-            
-              <img src="/images/works/daiyousei.jpg" alt="大妖精" loading="lazy">
-            
+          
+          <button type="button" class="work-card__media"
+            data-work-image="/images/works/daiyousei.jpg"
+            data-work-title="大妖精"
+            data-work-medium="插画"
+            data-work-origin="二创"
+            data-work-desc="东方 Project 大妖精二创。私人稿件，禁止 AI 使用与商用。"
+            aria-label="查看大图：大妖精">
+            <img src="/images/works/daiyousei.jpg" alt="大妖精" loading="lazy">
             <span class="work-card__type">插画</span>
-          </div>
+          </button>
+          
           <div class="work-card__body">
             <div class="work-card__kicker"><span class="chip chip--small">二创</span></div>
             <h2>大妖精</h2>
@@ -259,6 +271,18 @@
     
   </div>
 </section>
+
+<dialog class="work-lightbox" id="work-lightbox" aria-labelledby="work-lightbox-title">
+  <div class="work-lightbox__inner">
+    <button type="button" class="work-lightbox__close" id="work-lightbox-close" aria-label="关闭大图">×</button>
+    <img class="work-lightbox__image" id="work-lightbox-image" alt="">
+    <div class="work-lightbox__meta">
+      <p class="work-lightbox__kicker" id="work-lightbox-kicker"></p>
+      <h2 class="work-lightbox__title" id="work-lightbox-title"></h2>
+      <p class="work-lightbox__desc" id="work-lightbox-desc"></p>
+    </div>
+  </div>
+</dialog>
 
   </main>
 
@@ -301,6 +325,6 @@
 </button>
 
 
-  <script src="/js/main.js?v=20261118a" defer></script>
+  <script src="/js/main.js?v=20261118b" defer></script>
 </body>
 </html>

@@ -248,6 +248,53 @@
     applyFilters();
   }
 
+  /* ---------- 作品大图灯箱 ---------- */
+  var workLightbox = document.getElementById('work-lightbox');
+  if (workLightbox) {
+    var lightboxImage = document.getElementById('work-lightbox-image');
+    var lightboxTitle = document.getElementById('work-lightbox-title');
+    var lightboxKicker = document.getElementById('work-lightbox-kicker');
+    var lightboxDesc = document.getElementById('work-lightbox-desc');
+    var lightboxClose = document.getElementById('work-lightbox-close');
+
+    var closeLightbox = function () {
+      if (typeof workLightbox.close === 'function') workLightbox.close();
+      else workLightbox.removeAttribute('open');
+    };
+
+    document.querySelectorAll('.work-card__media[data-work-image]').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        if (lightboxImage) {
+          lightboxImage.src = trigger.getAttribute('data-work-image') || '';
+          lightboxImage.alt = trigger.getAttribute('data-work-title') || '';
+        }
+        if (lightboxTitle) lightboxTitle.textContent = trigger.getAttribute('data-work-title') || '';
+        if (lightboxKicker) {
+          lightboxKicker.textContent = [trigger.getAttribute('data-work-medium'), trigger.getAttribute('data-work-origin')]
+            .filter(Boolean).join(' · ');
+        }
+        if (lightboxDesc) lightboxDesc.textContent = trigger.getAttribute('data-work-desc') || '';
+        document.body.classList.add('has-lightbox');
+        if (typeof workLightbox.showModal === 'function') workLightbox.showModal();
+        else workLightbox.setAttribute('open', '');
+      });
+    });
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    var lightboxInner = workLightbox.querySelector('.work-lightbox__inner');
+    if (lightboxInner) {
+      lightboxInner.addEventListener('click', function (e) {
+        if (e.target === lightboxInner) closeLightbox();
+      });
+    }
+    workLightbox.addEventListener('click', function (e) {
+      if (e.target === workLightbox) closeLightbox();
+    });
+    workLightbox.addEventListener('close', function () {
+      document.body.classList.remove('has-lightbox');
+    });
+  }
+
   /* ---------- 角色面板 ---------- */
   var characterDialog = document.getElementById('character-dialog');
   if (characterDialog) {
