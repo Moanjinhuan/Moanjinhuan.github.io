@@ -2373,16 +2373,6 @@ html[data-theme='light'] .btn--primary:hover { background: #7f5d24; }
   flex-direction: column;
   padding: 0 24px 26px;
 }
-.character-card__no {
-  position: absolute;
-  top: 64px;
-  right: 22px;
-  z-index: 3;
-  color: rgba(201, 168, 106, 0.72);
-  font-family: var(--font-display);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-}
 .character-card--tall .character-card__en {
   margin: 0 0 8px;
   color: var(--accent);
@@ -2433,7 +2423,6 @@ html[data-theme='light'] .btn--primary:hover { background: #7f5d24; }
     border-radius: 999px 999px 8px 8px;
   }
   .character-card--tall .character-card__content { padding: 0 20px 24px; }
-  .character-card__no { top: 50px; right: 18px; }
 }
 
 /* 孩子们的窝：让拱形卡尽量出现在首屏 */

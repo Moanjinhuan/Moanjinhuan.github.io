@@ -49,7 +49,7 @@
   })();
 </script>
 
-<link rel="stylesheet" href="/css/style.css?v=20261116i">
+<link rel="stylesheet" href="/css/style.css?v=20261118a">
 <noscript><style>.intro{display:none!important}.menu-toggle{display:none!important}</style></noscript>
 
 
@@ -214,19 +214,46 @@
           <button type="button" class="filter-btn" data-group="origin" data-value="临摹" aria-pressed="false">临摹</button>
         
       </div>
-      <span class="works-count" id="works-count">共 0 件</span>
+      <span class="works-count" id="works-count">共 2 件</span>
     </div>
 
     
-    <div class="empty empty--page">
-      <p class="empty__index">01</p>
-      <p class="empty__title">作品还在整理中</p>
-      <p class="empty__text">分类框架已经搭好：媒介分插画、原画、音乐、建模，来源分原创、二创、临摹。等第一张作品放进来，这里就会亮起来。</p>
-      <div class="empty__actions">
-        <a class="btn btn--primary" href="/archives/">翻翻文集</a>
-        <a class="btn btn--line" href="https://github.com/Moanjinhuan" target="_blank" rel="noopener">GitHub ↗</a>
-      </div>
+    <div class="work-grid" id="work-grid">
+      
+        
+        <article class="work-card" data-medium="插画" data-origin="二创">
+          <div class="work-card__media">
+            
+              <img src="/images/works/rumia.jpg" alt="露米娅" loading="lazy">
+            
+            <span class="work-card__type">插画</span>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__kicker"><span class="chip chip--small">二创</span></div>
+            <h2>露米娅</h2>
+            <p>东方 Project 露米娅二创。私人稿件，禁止 AI 使用与商用。</p>
+            
+          </div>
+        </article>
+      
+        
+        <article class="work-card" data-medium="插画" data-origin="二创">
+          <div class="work-card__media">
+            
+              <img src="/images/works/daiyousei.jpg" alt="大妖精" loading="lazy">
+            
+            <span class="work-card__type">插画</span>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__kicker"><span class="chip chip--small">二创</span></div>
+            <h2>大妖精</h2>
+            <p>东方 Project 大妖精二创。私人稿件，禁止 AI 使用与商用。</p>
+            
+          </div>
+        </article>
+      
     </div>
+    <div class="works-empty-filter" id="works-filter-empty">这个筛选下还没有作品，换个分类看看。</div>
     
 
     
@@ -274,6 +301,6 @@
 </button>
 
 
-  <script src="/js/main.js?v=20261116i" defer></script>
+  <script src="/js/main.js?v=20261118a" defer></script>
 </body>
 </html>
